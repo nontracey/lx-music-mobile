@@ -177,6 +177,11 @@ declare global {
       'desktopLyric.enable': boolean
 
       /**
+       * 是否使用桌面歌词
+       */
+      'desktopLyric.isUseDesktopLyric': boolean
+
+      /**
        * 是否锁定桌面歌词
        */
       'desktopLyric.isLock': boolean

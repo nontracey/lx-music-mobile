@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 
 import Section from '../../components/Section'
 import IsShowLyric from './IsShowLyric'
+import LyricType from './LyricType'
 import IsLockLyric from './IsLockLyric'
 import IsShowToggleAnima from './IsShowToggleAnima'
 import IsSingleLine from './IsSingleLine'
@@ -24,6 +25,7 @@ export default memo(() => {
       <IsLockLyric />
       <IsShowToggleAnima />
       <IsSingleLine />
+      <LyricType />
       <Theme />
       <TextSize />
       <ViewWidth />

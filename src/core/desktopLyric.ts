@@ -25,10 +25,13 @@ import settingState from '@/store/setting/state'
 import playerState from '@/store/player/state'
 import { tranditionalize } from '@/utils/simplify-chinese-main'
 import { getPosition } from '@/plugins/player'
+import { toast } from '@/utils/tools'
 
 export const showDesktopLyric = async() => {
   const setting = settingState.setting
   await showLyric({
+    enable: setting['desktopLyric.enable'],
+    isUseDesktopLyric: setting['desktopLyric.isUseDesktopLyric'],
     isShowToggleAnima: setting['desktopLyric.showToggleAnima'],
     isSingleLine: setting['desktopLyric.isSingleLine'],
     isLock: setting['desktopLyric.isLock'],
@@ -43,6 +46,8 @@ export const showDesktopLyric = async() => {
     positionY: setting['desktopLyric.position.y'],
     textPositionX: setting['desktopLyric.textPosition.x'],
     textPositionY: setting['desktopLyric.textPosition.y'],
+  }).catch((err: any) => {
+    toast(err.message, 'long')
   })
   let lrc = playerState.musicInfo.lrc ?? ''
   let tlrc = playerState.musicInfo.tlrc ?? ''
